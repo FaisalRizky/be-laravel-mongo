@@ -62,6 +62,8 @@ Before you begin, ensure you have the following prerequisites:
    ```bash
    php artisan test
    ```
+    <img width="578" alt="image" src="https://github.com/FaisalRizky/be-laravel-mongo/assets/25649669/f6266852-d451-4337-8e46-1fecd433fde7">
+
 
 ### To Run
 
