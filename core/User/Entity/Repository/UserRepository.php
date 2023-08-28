@@ -25,6 +25,9 @@ class UserRepository implements UserRepositoryInterface
         $this->user = $user;
     }
 
+    /**
+     * @inheritdoc
+     */
     public function register($request)
     {
         try {

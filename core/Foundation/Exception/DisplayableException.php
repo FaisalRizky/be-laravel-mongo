@@ -13,7 +13,7 @@ use App\Exceptions\Handler;
 /**
  * Class DisplayableException
  *
- * @package Core\Foundation\Exception
+ * @package Core\Foundation\Exception\DisplayableException
  */
 class DisplayableException extends \Exception
 {

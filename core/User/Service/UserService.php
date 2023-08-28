@@ -9,7 +9,9 @@ declare(strict_types=1);
 namespace Core\User\Service;
 
 use Core\Foundation\Exception\MessageExceptionInterface;
+use Core\Foundation\Exception\HttpCodeInterface;
 use Core\User\Entity\Repository\UserRepository;
+use Core\User\Exception\UserNotFoundException;
 use Illuminate\Support\Facades\Auth;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Tymon\JWTAuth\Facades\JWTAuth;
@@ -22,7 +24,7 @@ use Tymon\JWTAuth\Facades\JWTAuth;
 class UserService implements UserServiceInterface {
     
     /**
-     * @var $userRepository UserRepositoryInterface
+     * @var $userRepository UserRepository
      */
     protected $userRepository;
 
@@ -34,12 +36,10 @@ class UserService implements UserServiceInterface {
     /**
      * @inheritdoc
      */
-    public function register($request) {
-        
+    public function register($request) 
+    {
         $result = $this->userRepository->register($request);
-
         return [
-            'status' => true, 
             'message' => "Successfully Register User",
             'data'     => $result
         ];
@@ -48,21 +48,12 @@ class UserService implements UserServiceInterface {
     /**
      * @inheritdoc
      */
-    public function login($request) {
-        
-        $credentials = $request->only('email', 'password');
+    public function login($request) 
+    {    
+        $credentials = $request;
         if (! $token = JWTAuth::attempt($credentials)) {
-            return [
-                'status' => false, 
-                'message' => MessageExceptionInterface::USER_CREDENTIAL_NOT_FOUND
-            ];
-        }
-
-        return [
-            'status' => true,
-            'access_token' => $token,
-            'token_type' => 'bearer',
-        ];
+            throw new UserNotFoundException(MessageExceptionInterface::USER_CREDENTIAL_NOT_FOUND, HttpCodeInterface::NOT_FOUND);
+        } return ['access_token' => $token];
     }
 
 
@@ -72,9 +63,7 @@ class UserService implements UserServiceInterface {
     public function logout() 
     {
         Auth::guard('api')->logout();
-        return ['status' => true, 
-                'message' => "Successfully Logout"
-       ];
+        return ['message' => "Successfully Logout"];
     }
 }
 

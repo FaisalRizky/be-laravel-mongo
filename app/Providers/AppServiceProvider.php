@@ -6,6 +6,8 @@ use Illuminate\Support\ServiceProvider;
 
 use Core\User\Service\UserServiceInterface;
 use Core\User\Service\UserService;
+use Core\Transaction\Service\TransactionServiceInterface;
+use Core\Transaction\Service\TransactionService;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -17,6 +19,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(UserServiceInterface::class, UserService::class);
+        $this->app->bind(TransactionServiceInterface::class, TransactionService::class);
     }
 
     /**

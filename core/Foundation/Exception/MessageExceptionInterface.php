@@ -18,4 +18,9 @@ interface MessageExceptionInterface
      * USER EXCEPTION
      */
     const USER_CREDENTIAL_NOT_FOUND = 'User Credential Not Found';
+
+    /**
+     * Vehicle EXCEPTION
+     */
+    const VEHICLE_NOT_FOUND = 'Vehicle Not Found';
 }

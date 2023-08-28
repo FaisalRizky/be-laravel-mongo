@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthorizationController;
+use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,5 +21,8 @@ Route::prefix('v1')->group(function () {
 
     Route::middleware('auth:api')->group(function () {
         Route::post('/logout', [AuthorizationController::class,'logout'])->name('v1.api.logout');
+        Route::post('/transaction', [TransactionController::class,'createTransaction'])->name('v1.api.create.transaction');
+        Route::get('/transaction', [TransactionController::class,'getSellTransactions'])->name('v1.api.get.sell.transaction');
+        Route::get('/vehicle', [TransactionController::class,'getDetail'])->name('v1.api.get.vehicle');
     });
 });
