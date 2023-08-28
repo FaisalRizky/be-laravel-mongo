@@ -93,3 +93,8 @@ If you're using a cloud-based MongoDB service, you may need to set up the connec
    ```
 
 2. Save your changes.
+
+### Postman Collection
+
+Import Collection on root folder named  to test it on your postman
+Automotive Sales.postman_collection.json
