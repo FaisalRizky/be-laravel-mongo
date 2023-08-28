@@ -63,6 +63,17 @@ Before you begin, ensure you have the following prerequisites:
    php artisan test
    ```
 
+### To Run
+
+To run the application locally, you can use the built-in PHP development server:
+
+```bash
+php artisan serve
+```
+
+This will start the development server, and you can access the application by visiting `http://localhost:8000` in your web browser.
+
+
 ### MongoDB Setup
 
 If you're using a cloud-based MongoDB service, you may need to set up the connection configuration.
