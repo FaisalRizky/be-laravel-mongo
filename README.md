@@ -4,6 +4,10 @@
 
 This is a sample Laravel 8 project with MongoDB integration and JWT authentication. It showcases how to set up a Laravel application with a MongoDB database and secure API endpoints using JSON Web Tokens (JWT).
 
+
+https://github.com/FaisalRizky/be-laravel-mongo/assets/25649669/aa239494-41c0-4a2d-a3f9-3122a39b3432
+
+
 The application features include:
 
 - User registration and authentication using JWT.
