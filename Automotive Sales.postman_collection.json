@@ -1,0 +1,290 @@
+{
+	"info": {
+		"_postman_id": "29397263-c0e0-479b-a96a-0cff0734818e",
+		"name": "Automotive Sales",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5493568"
+	},
+	"item": [
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "Create Transaction",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"vehicle_id\": \"64ec60de2a260000060000b8\",\r\n    \"operation\": \"Sell\",\r\n    \"stock\": 20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/transaction",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Transaction",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"vehicle_id\": \"64ec14cad11a0000b3003166\",\r\n    \"operation\": \"Sell\",\r\n    \"stock\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/transaction?vehicle_id=64ec60de2a260000060000ba",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transaction"
+							],
+							"query": [
+								{
+									"key": "vehicle_id",
+									"value": "64ec60de2a260000060000ba"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Vehicle",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"vehicle_id\": \"64ec14cad11a0000b3003166\",\r\n    \"operation\": \"Sell\",\r\n    \"stock\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/vehicle?type=Car",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"vehicle"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "Car"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Faisal1\",\r\n    \"email\": \"faisal@mail.me\",\r\n    \"password\": \"Coba1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/v1/register",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"faisal@mail.me\",\r\n    \"password\": \"Coba1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/v1/login",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/v1/logout",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:8000",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvbG9naW4iLCJpYXQiOjE2OTMyMTMwMjMsImV4cCI6MTY5MzIxNjYyMywibmJmIjoxNjkzMjEzMDIzLCJqdGkiOiIydm9oTEpYc1dNeEJXdzk5Iiwic3ViIjoiNjRlYzYxMDg3ZTBlMDAwMDdhMDAwOGEyIiwicHJ2IjoiMjkzNGExYTUyNjY5YzhkYWUzNmE1ZDM4NDZiMGJiNjM1NzhhMzMwOCJ9.q8Fi2PF1Bsfbkza8jV-vKgZdhqWo1cJmPxhT4DNiSqw.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvbG9naW4iLCJpYXQiOjE2OTMyMTI5NDEsImV4cCI6MTY5MzIxNjU0MSwibmJmIjoxNjkzMjEyOTQxLCJqdGkiOiJ2NnBMbjNFd1pYWTUwd0dYIiwic3ViIjoiNjRlYzYxMDg3ZTBlMDAwMDdhMDAwOGEyIiwicHJ2IjoiMjkzNGExYTUyNjY5YzhkYWUzNmE1ZDM4NDZiMGJiNjM1NzhhMzMwOCJ9.VcAds3417oHoZeBazL1AlASRlyB_VcTI0t16zc963sY.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvbG9naW4iLCJpYXQiOjE2OTMyMTI1MjUsImV4cCI6MTY5MzIxNjEyNSwibmJmIjoxNjkzMjEyNTI1LCJqdGkiOiJQQVBPcjNPOGM3dnA4SUdZIiwic3ViIjoiNjRlYzVlZWJhNjRmMDAwMDlhMDA1YTAyIiwicHJ2IjoiMjkzNGExYTUyNjY5YzhkYWUzNmE1ZDM4NDZiMGJiNjM1NzhhMzMwOCJ9.ViRkQG8xp5-UmtLfCo9r0BF0oN-gVTq_HZCQ90oP6yA",
+			"type": "string"
+		}
+	]
+}
