@@ -25,7 +25,7 @@ Before you begin, ensure you have the following prerequisites:
 1. Clone the repository:
    ```bash
    git clone https://github.com/FaisalRizky/be-laravel-mongo
-   cd your-repo
+   cd be-laravel-mongo
    ```
 
 2. Install dependencies:
